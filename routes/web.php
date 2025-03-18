@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-
+use App\Models\Job;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +23,12 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
+});
+
+Route::get('/test', function () {
+    $jobs = Job::all();
+   dd($jobs);
+
 });
 
 Route::get('/dashboard', function () {
